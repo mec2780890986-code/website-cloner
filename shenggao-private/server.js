@@ -72,9 +72,9 @@ http.createServer(async (req,res)=>{
       if(!allowed.some(ext=>file.name.toLowerCase().endsWith(ext))) return send(res,400,{error:'不支持此文件格式。'});
       const body=new FormData();
       body.append('file',file,file.name);
-      body.append('model','gpt-4o-transcribe');
+      body.append('model','gpt-transcribe');
       const lang = String(fields.get('language') || 'auto');
-      if(lang !== 'auto' && ['en','zh','ms'].includes(lang)) body.append('language',lang);
+      if(lang !== 'auto' && ['en','zh','ms'].includes(lang)) body.append('languages[]',lang);
       const prompt = String(fields.get('prompt') || '').slice(0,1200);
       if(prompt) body.append('prompt',prompt);
       const controller = new AbortController();
