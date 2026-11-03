@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101a2d"><title>声稿 · AI 音频转录</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<header><div class="logo">◉ <span>声稿</span></div><div class="tag">OPENAI · BYOK</div></header>
+<section class="hero"><div class="eyebrow">AUDIO TO TEXT · 音频转文字</div><h1>让每一段录音<br><em>成为清晰的文字。</em></h1><p>上传课堂录音、访谈或会议音频，使用你自己的 OpenAI API Key 快速转录。支持 iPad、手机和电脑。</p></section>
+<section class="panel">
+<div class="panel-head"><span class="step">01</span><h2>选择录音</h2><span class="muted">最大 25 MB</span></div>
+<label class="drop" id="drop"><input id="file" type="file" accept=".mp3,.mp4,.mpeg,.mpga,.m4a,.wav,.webm,.ogg,.flac,audio/*"><span class="upload-icon">↥</span><strong id="fileName">点击选择音频文件</strong><small>MP3 · M4A · WAV · WEBM · OGG · FLAC</small></label>
+<div class="fields"><label>转录语言<select id="language"><option value="auto">自动识别</option><option value="en">English</option><option value="zh">中文</option><option value="ms">Bahasa Melayu</option></select></label><label>OpenAI API Key<input id="key" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false"></label></div>
+<label class="full">专业词汇提示（可选）<textarea id="prompt" rows="2" placeholder="例如：mariculture, aquaculture, IMTA, RAS, rotifer, Artemia"></textarea></label>
+<div class="privacy">🔒 当前为私人测试版，进入网站需提供访问密码。API 密钥仅用于当前转录请求，不会保存在浏览器或服务器。音频与密钥经本网站服务器发送至 OpenAI。请只在可信的网站上输入密钥。</div>
+<button id="start">开始转录 <span>↗</span></button><div id="status" role="status" aria-live="polite"></div>
+</section>
+<section class="panel result" id="result" hidden><div class="panel-head"><span class="step">02</span><h2>转录结果</h2></div><textarea id="output" rows="13" aria-label="转录结果"></textarea><div class="actions"><button class="secondary" id="copy">复制文本</button><button class="secondary" id="download">下载 TXT</button></div></section>
+<footer>声稿 · 私人测试版 · OpenAI API 费用由使用者承担</footer>
+</main><script src="/app.js"></script></body></html>
